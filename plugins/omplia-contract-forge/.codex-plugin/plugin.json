@@ -1,0 +1,21 @@
+{
+  "name": "omplia-contract-forge",
+  "version": "0.1.0",
+  "description": "Draft contracts from your own prior contracts with enforced provenance: every clause traceable to a real source, hallucinated clauses blocked. Bilingual EN/ES. Zero dependencies.",
+  "author": { "name": "Omplia Studio" },
+  "homepage": "https://github.com/Omplia-Studio/omplia-skills",
+  "repository": "https://github.com/Omplia-Studio/omplia-skills",
+  "license": "MIT",
+  "keywords": ["contracts", "legal", "drafting", "provenance", "clauses", "spanish"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Omplia ContractForge",
+    "shortDescription": "Provenance-enforced contract drafting from your own contracts",
+    "longDescription": "Assemble contract drafts from a folder of your existing contracts (.docx, .pdf, .txt, .md). A deterministic engine ingests, classifies (EN/ES), filters, ranks and validates; the agent only drafts on top of retrieved clauses. A validation gate rejects any clause that does not trace to a real source. State persists in ~/.omplia/contract-forge across sessions and agents.",
+    "developerName": "Omplia Studio",
+    "category": "Legal",
+    "defaultPrompt": [
+      "Draft a contract for a new client using my old contracts as a template"
+    ]
+  }
+}

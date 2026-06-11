@@ -1,0 +1,20 @@
+{
+  "name": "omplia-skills",
+  "interface": {
+    "displayName": "Omplia Skills"
+  },
+  "plugins": [
+    {
+      "name": "omplia-contract-forge",
+      "source": {
+        "source": "local",
+        "path": "./plugins/omplia-contract-forge"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Legal"
+    }
+  ]
+}

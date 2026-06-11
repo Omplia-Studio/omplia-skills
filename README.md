@@ -33,7 +33,25 @@ my old contracts".
 repo (`Omplia-Studio/omplia-skills`), then install **Omplia ContractForge**.
 Skills installed through a plugin work across chat, Desktop and Cowork.
 
-## Install in other agents (Codex, Gemini CLI, Cursor, Copilot)
+## Install in Codex
+
+This repo doubles as a Codex plugin marketplace (`.agents/plugins/
+marketplace.json` + `.codex-plugin/plugin.json`, same skill folder). Two ways:
+
+```
+# As a skill (quickest) — from inside Codex:
+$skill-installer https://github.com/Omplia-Studio/omplia-skills
+
+# As a plugin — clone and register a personal marketplace:
+git clone --depth 1 https://github.com/Omplia-Studio/omplia-skills ~/.codex/plugins/omplia-skills
+```
+
+For the plugin route, point `~/.agents/plugins/marketplace.json` at the clone
+(see Codex docs on marketplaces), restart Codex, and install from the plugin
+directory. OpenAI's official Plugin Directory does not accept self-serve
+submissions yet ("coming soon").
+
+## Install in other agents (Gemini CLI, Cursor, Copilot)
 
 `SKILL.md` is an open standard (Agent Skills), and this skill is deliberately
 portable: zero dependencies, and state lives in `~/.omplia/contract-forge`
@@ -44,13 +62,13 @@ agent's skills directory:
 git clone --depth 1 https://github.com/Omplia-Studio/omplia-skills /tmp/omplia-skills
 SRC=/tmp/omplia-skills/plugins/omplia-contract-forge/skills/contract-forge
 
-cp -r "$SRC" ~/.codex/skills/contract-forge      # Codex CLI
+cp -r "$SRC" ~/.agents/skills/contract-forge     # shared path: Codex, Copilot CLI
 cp -r "$SRC" ~/.gemini/skills/contract-forge     # Gemini CLI
 cp -r "$SRC" .cursor/skills/contract-forge       # Cursor (per project)
 ```
 
-Project-scoped variants (`.codex/skills/`, `.gemini/skills/`) work the same
-way.
+A project-scoped `.agents/skills/` folder inside any repo is discovered
+automatically by Codex and other standard-compliant agents.
 
 ## Run the engine directly (any agent, or no AI at all)
 
@@ -96,9 +114,11 @@ ingest and excluded from candidates — OCR itself is not included.
 ## Layout
 
 ```
-.claude-plugin/marketplace.json          this repo is an installable marketplace
+.claude-plugin/marketplace.json          installable marketplace for Claude
+.agents/plugins/marketplace.json         installable marketplace for Codex
 plugins/omplia-contract-forge/
-  .claude-plugin/plugin.json
+  .claude-plugin/plugin.json             Claude plugin manifest
+  .codex-plugin/plugin.json              Codex plugin manifest
   skills/contract-forge/
     SKILL.md                 the loop and guardrails the agent follows
     scripts/                 the deterministic engine (stdlib only)
