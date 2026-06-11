@@ -3,7 +3,7 @@
   "displayName": "Omplia ContractForge",
   "description": "Draft contracts from your own prior contracts with enforced provenance: every clause traceable to a real source, hallucinated clauses blocked. Bilingual EN/ES. Zero dependencies.",
   "version": "0.1.0",
-  "author": { "name": "Eliecer Chicott" },
+  "author": { "name": "Omplia Studio" },
   "license": "MIT",
-  "homepage": "https://github.com/eachicott/omplia-skills"
+  "homepage": "https://github.com/Omplia-Studio/omplia-skills"
 }

@@ -20,7 +20,7 @@ rejects any clause not tied to a real source.
 ## Install as a Claude plugin
 
 ```
-/plugin marketplace add eachicott/omplia-skills
+/plugin marketplace add Omplia-Studio/omplia-skills
 /plugin install omplia-contract-forge@omplia-skills
 ```
 
