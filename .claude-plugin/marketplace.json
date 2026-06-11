@@ -1,0 +1,17 @@
+{
+  "name": "omplia-skills",
+  "owner": { "name": "Eliecer Chicott" },
+  "description": "Omplia skills: provenance-enforced legal and document workflows for AI agents",
+  "plugins": [
+    {
+      "name": "omplia-contract-forge",
+      "source": "./plugins/omplia-contract-forge",
+      "description": "Draft contracts from your own prior contracts with enforced provenance: every clause traceable to a real source, hallucinated clauses blocked. Bilingual EN/ES. Zero dependencies.",
+      "version": "0.1.0",
+      "author": { "name": "Eliecer Chicott" },
+      "license": "MIT",
+      "category": "legal",
+      "keywords": ["contracts", "legal", "drafting", "provenance", "clauses", "spanish"]
+    }
+  ]
+}
