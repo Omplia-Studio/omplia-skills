@@ -28,6 +28,30 @@ Works in Claude Code and any Claude surface that supports plugins. The skill
 triggers automatically on requests like "draft a contract for this client from
 my old contracts".
 
+**Claude on the web, Claude Desktop and Cowork**: open the Customize menu →
+**Plugins** → Personal plugins → **+** → **Add marketplace** → add this GitHub
+repo (`Omplia-Studio/omplia-skills`), then install **Omplia ContractForge**.
+Skills installed through a plugin work across chat, Desktop and Cowork.
+
+## Install in other agents (Codex, Gemini CLI, Cursor, Copilot)
+
+`SKILL.md` is an open standard (Agent Skills), and this skill is deliberately
+portable: zero dependencies, and state lives in `~/.omplia/contract-forge`
+regardless of which agent runs it. Install = copy the skill folder into your
+agent's skills directory:
+
+```
+git clone --depth 1 https://github.com/Omplia-Studio/omplia-skills /tmp/omplia-skills
+SRC=/tmp/omplia-skills/plugins/omplia-contract-forge/skills/contract-forge
+
+cp -r "$SRC" ~/.codex/skills/contract-forge      # Codex CLI
+cp -r "$SRC" ~/.gemini/skills/contract-forge     # Gemini CLI
+cp -r "$SRC" .cursor/skills/contract-forge       # Cursor (per project)
+```
+
+Project-scoped variants (`.codex/skills/`, `.gemini/skills/`) work the same
+way.
+
 ## Run the engine directly (any agent, or no AI at all)
 
 No installs needed — Python 3.10+ standard library only:
